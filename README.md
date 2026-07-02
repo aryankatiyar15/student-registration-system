@@ -25,39 +25,45 @@ The project uses HTML5, CSS3, Vanilla JavaScript, Node.js, Express.js, MySQL, my
 
 ```text
 student-registration-system/
-├── public/
-│   ├── login.html
-│   ├── register.html
-│   └── dashboard.html
-├── css/
-│   └── style.css
-├── js/
-│   ├── login.js
-│   ├── register.js
-│   └── dashboard.js
-├── config/
-│   └── db.js
-├── routes/
-│   ├── auth.js
-│   └── students.js
-├── server.js
-├── package.json
-├── .env
-├── database.sql
-└── README.md
+|-- public/
+|   |-- login.html
+|   |-- register.html
+|   `-- dashboard.html
+|-- css/
+|   `-- style.css
+|-- js/
+|   |-- login.js
+|   |-- register.js
+|   `-- dashboard.js
+|-- config/
+|   `-- db.js
+|-- routes/
+|   |-- auth.js
+|   `-- students.js
+|-- screenshots/
+|   |-- 01-registration-page.png
+|   |-- 02-login-page.png
+|   `-- 03-dashboard-page.png
+|-- server.js
+|-- package.json
+|-- package-lock.json
+|-- .env.example
+|-- .gitignore
+|-- database.sql
+`-- README.md
 ```
 
 ## MySQL Setup
 
 1. Start your MySQL server.
-2. Open `.env`.
+2. Copy `.env.example` to `.env`.
 3. Match these values to your local MySQL installation:
 
 ```env
 DB_HOST=localhost
 DB_PORT=3306
 DB_USER=root
-DB_PASSWORD=
+DB_PASSWORD=your_mysql_password
 DB_NAME=student_portal
 ```
 
@@ -70,7 +76,7 @@ PORT=3000
 DB_HOST=localhost
 DB_PORT=3306
 DB_USER=root
-DB_PASSWORD=
+DB_PASSWORD=your_mysql_password
 DB_NAME=student_portal
 BCRYPT_SALT_ROUNDS=10
 SESSION_COOKIE_NAME=student_session
@@ -109,6 +115,26 @@ http://localhost:3000
 8. The backend validates credentials from MySQL.
 9. The dashboard opens.
 10. The dashboard displays the logged-in student's name, total student count, and all registered students from MySQL.
+
+## Demo Screenshots
+
+### 1. Student Registration Page
+
+Students first create an account using their name, unique email, password, and confirm password fields.
+
+![Student Registration Page](screenshots/01-registration-page.png)
+
+### 2. Student Login Page
+
+After successful registration, students are redirected to the login page and authenticate using MySQL-backed credentials.
+
+![Student Login Page](screenshots/02-login-page.png)
+
+### 3. Dashboard Page
+
+After login, the dashboard displays the logged-in student's name, total registered students from `COUNT(*)`, and a live table of students from MySQL.
+
+![Dashboard Page](screenshots/03-dashboard-page.png)
 
 ## API Endpoints
 
@@ -168,6 +194,6 @@ CREATE TABLE IF NOT EXISTS students (
 
 - Passwords are hashed using bcrypt before storing in MySQL.
 - Login checks use `bcrypt.compare`.
-- All SQL queries use mysql2 prepared statements.
+- All student registration, login, count, and list queries use mysql2 prepared statements.
 - Dashboard APIs never return password hashes.
 - The login session is stored using an HTTP-only cookie.
