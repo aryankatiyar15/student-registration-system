@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Dashboard</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <main class="dashboard-page">
+    <header class="dashboard-header">
+      <div>
+        <p class="eyebrow">Student Portal</p>
+        <h1 id="welcomeTitle">Welcome</h1>
+      </div>
+      <button type="button" class="secondary-button" id="logoutButton">Logout</button>
+    </header>
+
+    <section class="stats-grid" aria-label="Dashboard summary">
+      <article class="stat-card">
+        <span>Total Registered Students</span>
+        <strong id="studentCount">0</strong>
+      </article>
+    </section>
+
+    <section class="table-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Live MySQL Data</p>
+          <h2>Registered Students</h2>
+        </div>
+      </div>
+
+      <div id="dashboardMessage" class="message" aria-live="polite"></div>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Student ID</th>
+              <th>Student Name</th>
+              <th>Email</th>
+              <th>Registration Date</th>
+            </tr>
+          </thead>
+          <tbody id="studentsTableBody">
+            <tr>
+              <td colspan="4" class="empty-state">Loading students...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="/js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "student-registration-system",
+  "version": "1.0.0",
+  "description": "Student Registration and Login System using HTML, CSS, JavaScript, Node.js, Express, and MySQL.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "student-registration",
+    "express",
+    "mysql",
+    "authentication"
+  ],
+  "author": "Student Registration System",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mysql2": "^3.11.5"
+  }
+}

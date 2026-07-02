@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Login</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <main class="auth-page">
+    <section class="auth-card">
+      <div class="brand-mark">SP</div>
+      <h1>Student Login</h1>
+      <p class="page-subtitle">Access your student dashboard using your registered email.</p>
+
+      <form id="loginForm" novalidate>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="student@example.com" autocomplete="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="Enter your password" autocomplete="current-password" required>
+        </div>
+
+        <p id="message" class="message" aria-live="polite"></p>
+
+        <button type="submit" class="primary-button" id="loginButton">Login</button>
+      </form>
+
+      <p class="form-footer">
+        New student?
+        <a href="/register.html">Create an account</a>
+      </p>
+    </section>
+  </main>
+
+  <script src="/js/login.js"></script>
+</body>
+</html>
